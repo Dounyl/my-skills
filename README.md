@@ -1,9 +1,10 @@
 # Personal Skills Repository
 
-This repository contains the personal Codex/agent skills extracted from the local global skills directory at `/Users/jonny/.agents/skills`.
+This repository contains personal Codex/agent skills, along with sync scripts for installing them into a local global skills directory.
 
 ## Included Skills
 
+- `a-stock-data`
 - `agnes-ai-generation`
 - `ai-evals`
 - `competitive-analysis`
@@ -18,6 +19,8 @@ This repository contains the personal Codex/agent skills extracted from the loca
 ## Structure
 
 Each skill is preserved in its original directory layout, including supporting `references/`, `agents/`, and `scripts/` folders where present.
+
+The sync scripts detect any top-level directory that contains a `SKILL.md` file, so newly added skills can be picked up without editing the script for each addition.
 
 ## Sync To Local Skills
 
@@ -72,4 +75,4 @@ scripts\sync-skills.cmd
 
 ## Source
 
-Extracted on `2026-06-29` from the local personal skills path on this machine.
+Maintained as the working repository for local personal skills on this machine.

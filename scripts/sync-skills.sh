@@ -19,8 +19,11 @@ for skill_dir in "$REPO_ROOT"/*; do
   [ -d "$skill_dir" ] || continue
 
   skill_name=$(basename "$skill_dir")
-  [ "$skill_name" = ".git" ] && continue
-  [ "$skill_name" = "scripts" ] && continue
+  case "$skill_name" in
+    .*|scripts)
+      continue
+      ;;
+  esac
   [ -f "$skill_dir/SKILL.md" ] || continue
 
   target_dir="$TARGET_ROOT/$skill_name"

@@ -30,7 +30,7 @@ for /d %%D in ("%REPO_ROOT%\*") do (
   set "SKILL_DIR=%%~fD"
   set "SKILL_NAME=%%~nxD"
 
-  if /i not "!SKILL_NAME!"==".git" if /i not "!SKILL_NAME!"=="scripts" if exist "!SKILL_DIR!\SKILL.md" (
+  if /i not "!SKILL_NAME!"==".git" if /i not "!SKILL_NAME!"==".agents" if /i not "!SKILL_NAME!"==".codex" if /i not "!SKILL_NAME!"==".codegraph" if /i not "!SKILL_NAME!"=="scripts" if exist "!SKILL_DIR!\SKILL.md" (
     set "TARGET_DIR=%TARGET_ROOT%\!SKILL_NAME!"
 
     if not exist "!TARGET_DIR!\" (

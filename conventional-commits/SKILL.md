@@ -141,6 +141,9 @@ Based on [Angular commit message guidelines](https://github.com/angular/angular/
 - Do not capitalize first letter
 - No period (.) at the end
 - Keep entire header (type + scope + description) under 72 characters
+- Make the description specific to the main change in this commit, not just a generic action
+- Prefer a description that answers "what changed" at a glance, especially when the type alone is not enough
+- Chinese descriptions are acceptable when they are clearer for the team; keep them concise and focused on the primary change
 
 ### Good Examples
 
@@ -149,6 +152,9 @@ feat: add validation for email input
 fix: handle null pointer in user service
 docs: update installation instructions
 refactor: simplify authentication flow
+feat: 增加订单导出和筛选能力
+fix: 修复支付回调重复写入订单状态
+docs: 补充技能同步脚本的使用说明
 ```
 
 ### Bad Examples (Avoid)
@@ -158,6 +164,66 @@ feat: Added validation for email input     # Past tense
 fix: Handles null pointer in user service  # Third person
 docs: Update installation instructions.    # Period at end, capitalized
 FEAT: add validation                       # Uppercase type (inconsistent)
+feat: update code                          # Too vague, does not say what changed
+fix: 修改一下                              # Too generic, lacks main change
+```
+
+### Specificity Over Brevity
+
+The type is only the category of change. The description should carry the main substance of the commit.
+
+Prefer:
+
+```text
+feat: 增加技能同步前的差异检查
+fix(auth): 修复 token 过期后重复刷新问题
+refactor(api): 拆分用户资料更新逻辑
+```
+
+Avoid descriptions that only restate the type or use empty verbs:
+
+```text
+feat: 新功能
+fix: 修复问题
+chore: 更新内容
+refactor: 调整代码
+```
+
+When generating a commit message for a completed task, summarize the most important user-visible, behavior-changing, or maintenance-relevant modification in the description. If the commit includes multiple related edits, name the unifying theme rather than listing every file.
+
+### Recommended General-to-Specific Structure
+
+For most completed tasks, use a general-to-specific structure:
+
+1. Put the main point of the commit in the header
+2. Add a body only when the commit has multiple meaningful sub-changes
+3. In the body, list the major changes with `1. 2. 3.` so the summary is easy to scan
+
+Recommended pattern:
+
+```text
+<type>[optional scope]: <这次提交主要做了什么>
+
+1. <第一项关键改动>
+2. <第二项关键改动>
+3. <第三项关键改动>
+```
+
+Example:
+
+```text
+feat: 完善 git 提交 skill 的提交信息生成规则
+
+1. 强制标题写明本次提交的主要改动，而不是只写泛化动作
+2. 增加中文提交标题示例，方便直接生成可用描述
+3. 补充简单提交与复杂提交的写法边界
+```
+
+If the commit is simple, do not force a body. A header-only commit is preferred:
+
+```text
+docs: 补充 sync 脚本的环境变量说明
+fix: 修复技能目录不存在时的报错
 ```
 
 ### Body Guidelines
@@ -167,6 +233,8 @@ FEAT: add validation                       # Uppercase type (inconsistent)
 - Include comparison of previous vs new behavior when helpful
 - Body **MUST** begin with one blank line after description
 - Recommended minimum: 20 characters when body is present
+- Prefer a numbered `1. 2. 3.` list when the body is summarizing several coordinated changes
+- Skip the body entirely when one short header already explains the change clearly
 
 ## Breaking Changes
 

@@ -31,7 +31,7 @@ This repository includes quick sync scripts for copying the skills in this repo 
 Run:
 
 ```bash
-./scripts/sync-skills.sh
+./sync-skills.sh
 ```
 
 Default target:
@@ -43,7 +43,7 @@ Default target:
 You can also override the target path:
 
 ```bash
-AGENTS_SKILLS_DIR=/custom/path ./scripts/sync-skills.sh
+AGENTS_SKILLS_DIR=/custom/path ./sync-skills.sh
 ```
 
 ### Windows
@@ -51,7 +51,7 @@ AGENTS_SKILLS_DIR=/custom/path ./scripts/sync-skills.sh
 Run in Command Prompt:
 
 ```bat
-scripts\sync-skills.cmd
+sync-skills.cmd
 ```
 
 Default target:
@@ -64,7 +64,7 @@ You can also override the target path:
 
 ```bat
 set AGENTS_SKILLS_DIR=D:\custom\skills
-scripts\sync-skills.cmd
+sync-skills.cmd
 ```
 
 ### Existing Skills Behavior

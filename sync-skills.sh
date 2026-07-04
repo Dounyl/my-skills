@@ -2,8 +2,7 @@
 
 set -eu
 
-SCRIPT_DIR=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
-REPO_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
 TARGET_ROOT=${AGENTS_SKILLS_DIR:-"$HOME/.agents/skills"}
 BACKUP_ROOT="$TARGET_ROOT/.backup"
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")

@@ -1,8 +1,8 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
 
-set "SCRIPT_DIR=%~dp0"
-for %%I in ("%SCRIPT_DIR%..") do set "REPO_ROOT=%%~fI"
+set "REPO_ROOT=%~dp0"
+if "%REPO_ROOT:~-1%"=="\" set "REPO_ROOT=%REPO_ROOT:~0,-1%"
 
 if defined AGENTS_SKILLS_DIR (
   set "TARGET_ROOT=%AGENTS_SKILLS_DIR%"

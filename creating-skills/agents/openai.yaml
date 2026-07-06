@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creating Skills"
+  short_description: "Create, replace, or improve skills."
+  default_prompt: "Use this skill to create, replace, or refine a skill."

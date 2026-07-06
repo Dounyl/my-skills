@@ -10,11 +10,16 @@ This repository contains personal Codex/agent skills, along with sync scripts fo
 - `competitive-analysis`
 - `conducting-user-interviews`
 - `conventional-commits`
+- `creating-skills`
 - `find-skills`
 - `prioritizing-roadmap`
 - `problem-definition`
 - `scoping-cutting`
 - `writing-prds`
+
+## Skill Highlights
+
+- `creating-skills`: Creates, replaces, and improves skills. Use it to design new skills, refactor existing ones, strengthen trigger metadata, split oversized `SKILL.md` files into references, and review skills against best practices.
 
 ## Structure
 

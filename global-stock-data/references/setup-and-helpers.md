@@ -15,6 +15,10 @@
 pip install mootdx requests pandas stockstats
 ```
 
+如果当前环境缺少 `mootdx` 或 TCP 不可达：
+- 行情类优先退到腾讯等 HTTP 源
+- 不要把环境问题误判为字段不存在
+
 ## iwencai
 
 只有语义搜索研报时需要：
@@ -80,4 +84,4 @@ export IWENCAI_BASE_URL="https://openapi.iwencai.com"
 - 新闻字段
 - 两融字段
 
-这些都应回到各自 `domain-*.md`。
+这些都应回到各自 `domain-*.md`

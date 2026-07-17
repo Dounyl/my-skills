@@ -9,7 +9,7 @@
 - 分钟级资金流
 
 如果涉及龙虎榜、解禁、行业排名、涨停池、热榜，不读本文件，改读：
-- [signals-trading-structure.md](C:/Users/theD/Desktop/tempwork/references/signals-trading-structure.md)
+- [signals-trading-structure.md](signals-trading-structure.md)
 
 ## 能力路由
 
@@ -46,6 +46,12 @@
 
 建议脚本：
 - `scripts/signals/eastmoney_fund_flow.py`
+
+## 边界
+
+- 这份文件默认是 A 股交易信号能力
+- 如果用户要跨市场联动，补读 [workflows.md](workflows.md)
+- 如果用户要海外市场情绪指标，不要假设这里已有对应端点
 
 ## 共享约束
 

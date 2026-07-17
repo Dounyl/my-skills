@@ -51,4 +51,9 @@
 ## 共享约束
 
 - 交易结构类东财请求优先走 `eastmoney_datacenter()`
-- 如果需要组合“题材热度 + 资金验证”，跳转 [workflows.md](C:/Users/theD/Desktop/tempwork/references/workflows.md)
+- 如果需要组合“题材热度 + 资金验证”，跳转 [workflows.md](workflows.md)
+
+## 边界
+
+- 这些能力默认都面向 A 股交易结构
+- 如果用户要全球市场情绪对比，先做资讯或指数层观察，再决定是否扩展结构化脚本

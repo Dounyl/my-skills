@@ -4,7 +4,7 @@ This repository contains personal Codex/agent skills, along with sync scripts fo
 
 ## Included Skills
 
-- `a-stock-data`
+- `global-stock-data`
 - `agnes-ai-generation`
 - `ai-evals`
 - `competitive-analysis`

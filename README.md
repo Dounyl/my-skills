@@ -12,6 +12,7 @@ This repository contains personal Codex/agent skills, along with sync scripts fo
 - `conventional-commits`
 - `creating-skills`
 - `find-skills`
+- `generating-prototype`
 - `prioritizing-roadmap`
 - `problem-definition`
 - `scoping-cutting`

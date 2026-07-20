@@ -1,11 +1,15 @@
 ---
 name: conventional-commits
-description: When writing a git commit message. When task completes and changes need committing. When project uses semantic-release, commitizen, git-cliff. When choosing between feat/fix/chore/docs types. When indicating breaking changes. When generating changelogs from commit history.
+description: When writing a git commit message from the current uncommitted diff. When task completes and changes need committing. When project uses semantic-release, commitizen, git-cliff. When choosing between feat/fix/chore/docs types. When indicating breaking changes. When generating changelogs from commit history.
 ---
 
 # Conventional Commits
 
 Compose commit messages following the Conventional Commits v1.0.0 specification for structured commit history, automated changelog generation, and semantic versioning.
+
+## Commit Input
+
+Before drafting a commit message, inspect the current working tree and staged diff. Base the header on the actual uncommitted changes, not on the conversation history or task summary. Use a rough read of `git status --short` and the relevant diff hunks to identify the main change. If the diff is large, infer the theme from changed file names and directories before reading every hunk, then keep the message focused on that slice.
 
 ## When to Use This Skill
 
@@ -155,6 +159,11 @@ refactor: simplify authentication flow
 feat: 增加订单导出和筛选能力
 fix: 修复支付回调重复写入订单状态
 docs: 补充技能同步脚本的使用说明
+feat: 完善 git 提交 skill 的提交信息生成规则
+
+1. 强制标题写明本次提交的主要改动，而不是只写泛化动作
+2. 增加中文提交标题示例，方便直接生成可用描述
+3. 补充复杂提交时的多行分点写法
 ```
 
 ### Bad Examples (Avoid)
@@ -219,7 +228,7 @@ feat: 完善 git 提交 skill 的提交信息生成规则
 3. 补充简单提交与复杂提交的写法边界
 ```
 
-If the commit is simple, do not force a body. A header-only commit is preferred:
+If the commit is simple, do not force a body. A header-only commit is preferred. When the change is large or coordinated, a short body with numbered points is allowed:
 
 ```text
 docs: 补充 sync 脚本的环境变量说明

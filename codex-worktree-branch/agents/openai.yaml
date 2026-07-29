@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Clean Worktree"
+  short_description: "Create a clean Codex worktree and scoped branch"
+  default_prompt: "Use $codex-worktree-branch to create a clean worktree for the stated scope."

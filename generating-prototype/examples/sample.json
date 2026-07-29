@@ -1,0 +1,77 @@
+{
+  "project": "会员体验原型",
+  "businesses": [
+    {
+      "name": "登录注册",
+      "direction": "LR",
+      "theme": {
+        "primary": "#5b5ce2",
+        "background": "#eef0f7"
+      },
+      "shared_styles": ".demo-page{min-height:816px;padding:54px 24px 28px;background:linear-gradient(180deg,#f0efff 0,#fff 32%)}.demo-card{margin-top:48px;padding:24px;border:1px solid #e6e8ef;border-radius:22px;background:#fff;box-shadow:0 18px 45px rgba(45,49,80,.08)}.demo-card h2{margin:0 0 8px;font-size:24px}.demo-card p{margin:0 0 24px;color:#6b7280}.demo-input{height:52px;margin:12px 0;padding:0 15px;border:1px solid #d7dce5;border-radius:13px;line-height:52px;color:#9ca3af}.demo-button{display:block;margin-top:20px;padding:15px;border-radius:13px;background:#5b5ce2;color:#fff;text-align:center;text-decoration:none;font-weight:800}",
+      "pages": [
+        {
+          "id": "P01",
+          "title": "手机号登录",
+          "platform": "mobile",
+          "markup": "<main class=\"demo-page\"><section class=\"demo-card\"><h2>欢迎回来</h2><p>使用手机号继续</p><div class=\"demo-input\">请输入手机号</div><a class=\"demo-button\" href=\"P02.html\">获取验证码</a></section></main>",
+          "styles": "",
+          "callouts": [
+            { "tone": "action", "text": "手机号格式正确后进入验证码页" }
+          ]
+        },
+        {
+          "id": "P02",
+          "title": "验证码确认",
+          "platform": "mobile",
+          "markup": "<main class=\"demo-page\"><section class=\"demo-card\"><h2>输入验证码</h2><p>验证码已发送至 138****8899</p><div class=\"demo-input\">6 位验证码</div><a class=\"demo-button\" href=\"P03.html\">确认登录</a></section></main>",
+          "styles": "",
+          "callouts": [
+            { "tone": "state", "text": "倒计时结束后允许重新发送" }
+          ]
+        },
+        {
+          "id": "P03",
+          "title": "会员首页",
+          "platform": "mobile",
+          "markup": "<main class=\"demo-page\"><section class=\"demo-card\"><h2>下午好，林女士</h2><p>黄金会员 · 本月成长值 860</p><div class=\"demo-input\">我的权益</div><a class=\"demo-button\" href=\"../overview.html\">查看流程</a></section></main>",
+          "styles": "",
+          "callouts": []
+        }
+      ],
+      "edges": [
+        { "from": "P01", "to": "P02", "label": "手机号有效" },
+        { "from": "P02", "to": "P03", "label": "验证码正确", "tone": "success" },
+        { "from": "P02", "to": "P02", "label": "重新发送", "tone": "warning" }
+      ]
+    },
+    {
+      "name": "账户管理",
+      "direction": "TB",
+      "pages": [
+        {
+          "id": "A01",
+          "title": "账户列表",
+          "platform": "desktop",
+          "markup": "<main class=\"admin-page\"><aside>设置中心</aside><section><header><h2>账户管理</h2><button>新建账户</button></header><div class=\"stats\"><strong>28</strong><span>活跃账户</span></div><table><thead><tr><th>姓名</th><th>角色</th><th>状态</th></tr></thead><tbody><tr><td>林小满</td><td>管理员</td><td>正常</td></tr><tr><td>周景</td><td>运营</td><td>正常</td></tr></tbody></table><a href=\"A02.html\">打开账户详情</a></section></main>",
+          "styles": ".admin-page{display:grid;grid-template-columns:220px 1fr;min-height:720px;background:#f6f8fb}.admin-page aside{padding:30px;background:#172033;color:#fff;font-size:18px;font-weight:800}.admin-page section{padding:36px}.admin-page header{display:flex;justify-content:space-between;align-items:center}.admin-page button,.admin-page>a{padding:11px 16px;border:0;border-radius:10px;background:#2563eb;color:#fff;text-decoration:none}.stats{width:240px;margin:28px 0;padding:22px;border-radius:16px;background:#fff}.stats strong,.stats span{display:block}.stats strong{font-size:32px}table{width:100%;margin-bottom:30px;border-collapse:collapse;background:#fff}th,td{padding:16px;border-bottom:1px solid #e5e7eb;text-align:left}",
+          "callouts": []
+        },
+        {
+          "id": "A02",
+          "title": "账户详情",
+          "platform": "desktop",
+          "markup": "<main class=\"detail-page\"><h2>林小满</h2><p>管理员 · 正常</p><section><h3>基础信息</h3><div>手机号 138****8899</div><div>最后登录 2026-07-10 09:41</div></section><a href=\"A01.html\">返回列表</a></main>",
+          "styles": ".detail-page{min-height:720px;padding:46px;background:#f6f8fb}.detail-page section{max-width:760px;margin:26px 0;padding:28px;border-radius:18px;background:#fff}.detail-page section div{padding:15px 0;border-bottom:1px solid #edf0f4}.detail-page>a{color:#2563eb}",
+          "callouts": [
+            { "tone": "element", "text": "敏感信息默认脱敏展示" }
+          ]
+        }
+      ],
+      "edges": [
+        { "from": "A01", "to": "A02", "label": "查看账户" },
+        { "from": "A02", "to": "A01", "label": "返回" }
+      ]
+    }
+  ]
+}

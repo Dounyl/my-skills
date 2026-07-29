@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业控制台登录</title>
+<link rel="stylesheet" href="assets/prototype.css">
+<style>:root{--prototype-primary:#ff6b2c;--prototype-background:#f4efe8;--prototype-surface:#fffaf5;--prototype-text:#1f2937;--prototype-muted:#6b7280;}</style>
+</head>
+<body>
+<div id="root"></div>
+<script id="prototype-config" type="application/json">{"kind":"overview","businessName":"企业控制台登录","direction":"LR","indexHref":null,"pages":[{"id":"W01","title":"邮箱密码登录"},{"id":"W02","title":"二次验证"},{"id":"W03","title":"重置密码"},{"id":"W04","title":"登录后工作台"},{"id":"W05","title":"单点登录选择"},{"id":"W06","title":"登录失败恢复态"}],"edges":[{"from":"W01","to":"W02","label":"密码正确，进入 MFA","tone":"success"},{"from":"W01","to":"W03","label":"忘记密码","tone":"default"},{"from":"W01","to":"W05","label":"切换 SSO","tone":"default"},{"from":"W01","to":"W06","label":"密码错误","tone":"danger"},{"from":"W02","to":"W04","label":"验证码正确","tone":"success"},{"from":"W02","to":"W02","label":"重新发送验证码","tone":"warning"},{"from":"W02","to":"W05","label":"改用 SSO","tone":"default"},{"from":"W03","to":"W01","label":"发送邮件后返回","tone":"default"},{"from":"W05","to":"W04","label":"组织认证通过","tone":"success"},{"from":"W05","to":"W01","label":"回退密码登录","tone":"default"},{"from":"W06","to":"W01","label":"重新尝试","tone":"default"},{"from":"W06","to":"W03","label":"进入重置密码","tone":"default"},{"from":"W06","to":"W05","label":"切换 SSO","tone":"default"}]}</script>
+
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/dagre.min.js"></script>
+<script src="assets/prototype-runtime.js"></script>
+</body>
+</html>
